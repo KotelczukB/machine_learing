@@ -348,3 +348,7 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+the-smart-mill-game/.vscode/tasks.json
+the-smart-mill-game/.vscode/launch.json
+.gitignore
+the-smart-mill-game/.vscode/settings.json
