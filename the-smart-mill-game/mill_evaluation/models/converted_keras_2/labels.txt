@@ -1,0 +1,4 @@
+0 black
+1 white
+2 empty
+3 other
