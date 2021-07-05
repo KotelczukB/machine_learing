@@ -52,16 +52,15 @@ class Metrics(keras.callbacks.Callback):
             self.metrics[key].append(logs.get('metrics')[ordinal])
 
 tensorboard = keras.callbacks.TensorBoard(
-    log_dir='./tensorboards/keras/DQN_5_624', histogram_freq=0, write_graph=True, write_images=False,
+    log_dir='./tensorboards/keras/DQN_8_624', histogram_freq=0, write_graph=True, write_images=False,
     update_freq='epoch', profile_batch=2, embeddings_freq=0,
     embeddings_metadata=None
 )
 
-
 dqn = build_agent(model, actions)
 metrics = Metrics(dqn)
 dqn.compile(Adam(learning_rate=0.1), metrics=['mae']) 
-dqn.fit(env, nb_steps=int(9.5e+6), visualize=False, verbose=1, callbacks=[tensorboard, metrics])
+dqn.fit(env, nb_steps=int(3e+6), visualize=False, verbose=1, callbacks=[tensorboard, metrics])
 
-dqn.save_weights('./models/keras/dqn/dqn_weights_5_624.h5f', overwrite=True)
-model.save("./models/keras/dqn/model_dqn_5_624.h5")
+dqn.save_weights('./models/keras/dqn_4/dqn_weights_5_624.h5f', overwrite=True)
+model.save("./models/keras/dqn_4/model_dqn_5_624.h5")
