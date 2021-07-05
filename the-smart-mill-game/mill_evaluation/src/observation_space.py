@@ -25,7 +25,7 @@ class ObservationSpace():
 
 		# load model
 		os.chdir('..')
-		model_home = os.getcwd() + '/models/converted_keras_4/keras_model.h5'
+		model_home = os.getcwd() + '/models/converted_keras_6/keras_model.h5'
 		model = tensorflow.keras.models.load_model(model_home, compile=False)
 		data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
 
@@ -62,10 +62,10 @@ class ObservationSpace():
 			output = 2
 			output_friendly = 'undefined'
 			if match == 0:
-				output = 0
+				output = 1
 				output_friendly = 'black'
 			if match == 1:
-				output = 1
+				output = 0
 				output_friendly = 'white'
 			if match == 2:
 				output = 2
